@@ -1,0 +1,26 @@
+<%= error_messages_for @post %>
+<%= form_for(@post, :html => {:class => "form-horizontal"} ) do |f| %>
+    <fieldset>
+                <div class="control-group">
+                <%= f.label ta(Post, :title), :class => "control-label" %>
+                <div class="controls">
+                  <%= f.text_field :title, :class => "input-xlarge", :placeholder => ta(Post, :title) %>
+                </div>
+          </div>
+                <div class="control-group">
+                <%= f.label ta(Post, :body), :class => "control-label" %>
+                <div class="controls">
+                  <%= f.text_area :body, :class => "input-xlarge", :placeholder => ta(Post, :body) %>
+                </div>
+          </div>
+                <div class="control-group">
+                <%= f.label ta(Post, :user), :class => "control-label" %>
+                <div class="controls">
+                  <%= f.text_field :user, :class => "input-xlarge", :placeholder => ta(Post, :user) %>
+                </div>
+          </div>
+            <div class="form-actions">
+        <%= f.submit :class => 'btn btn-success btn-large' %> <%= link_to 'Cancelar', "javascript:void(0)",:onclick =>"javascript:history.go(-1);", :class => "btn" %>
+      </div>
+    </fieldset>
+<% end %>

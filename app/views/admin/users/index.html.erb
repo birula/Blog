@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>User <small>Lista de users</small>&nbsp;&nbsp;&nbsp;<%= link_to_new User, new_user_path %></h1>
+  <h1>User <small>Lista de users</small>&nbsp;&nbsp;&nbsp;<%= link_to_new User, new_admin_user_path %></h1>
 </div>
 
 <% if @users.present? %>
@@ -15,12 +15,10 @@
           <tr class="list-roles">
                         <td><%= user.name %></td>
                         <td>
-              <%= link_to user, :class=>"btn btn-mini" do %><i class="icon-file"></i> Visualizar<% end %>
-              <%= link_to edit_user_path(user), :class=>"btn btn-mini" do %><i class="icon-pencil"></i> Alterar<% end %>
-              <%= link_to user, method: :delete, data: { confirm: 'Deseja realmente excluir essa User?' }, :class=>"btn btn-mini" do %><i class="icon-trash"></i> Excluir<% end %>
+              <%= link_to admin_user_path(user), :class=>"btn btn-mini" do %><i class="icon-file"></i> Visualizar<% end %>
+              <%= link_to edit_admin_user_path(user), :class=>"btn btn-mini" do %><i class="icon-pencil"></i> Alterar<% end %>
+              <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Deseja realmente excluir essa User?' }, :class=>"btn btn-mini" do %><i class="icon-trash"></i> Excluir<% end %>
 
-              <%= link_to_edit  [:edit, user]%>
-              <%= link_to_destroy  [user]%>
             </td>
           </tr>
       <% end %>

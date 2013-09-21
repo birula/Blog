@@ -1,15 +1,16 @@
 Blog::Application.routes.draw do
   devise_for :users
-  resources :users
 
-        root to: 'content#home'
+  ###
+  # Admin
+  ###
+  namespace :admin do
+    root to: 'content#home'
+    resources :posts
+    resources :users
+  end
 
-        ###
-        # Admin
-        ###
-        namespace :admin do
-          root to: 'content#home'
-        end
+  root to: 'content#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -51,7 +52,7 @@ Blog::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
