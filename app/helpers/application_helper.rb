@@ -51,6 +51,51 @@ module ApplicationHelper
       link_to item.send("#{attribute}_file_name"), paperclip_file_url(item, attribute)
     end
 
+
+def link_to_export_excel(model, url, html_options = {})
+    html_options.reverse_merge!(:class => "btn btn-mini")
+    link_to t("export", model: model.model_name.human), url, html_options
+
+    link_to url, html_options do
+      html = content_tag :i, " ", :class => "icon_excel"
+      html += t("export")
+      html.html_safe
+    end
+  end
+
+  def link_to_new(model, url, html_options = {})
+    html_options.reverse_merge!(:class => "btn btn-success")
+    link_to t("new", model: model.model_name.human), url, html_options
+  end
+
+  def link_to_edit(url, html_options = {})
+    html_options.reverse_merge!(:class => "btn btn-mini")
+    link_to url, html_options do
+      html = content_tag :i, " ", :class => "icon-pencil"
+      html += t("edit")
+      html.html_safe
+    end
+  end
+
+  def link_to_destroy(url, html_options = {})
+    html_options.reverse_merge!(:confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini")
+    link_to url, html_options do
+      html = content_tag :i, " ", :class => "icon-trash"
+      html += t("destroy")
+      html.html_safe
+    end
+  end
+
+  def section(title="", &block)
+    content_tag :div, :class => "section" do
+      html  = ""
+      html  += content_tag :h3, title if title.present?
+      html  += content_tag :div, :class => "in", &block
+      html.html_safe
+    end
+  end
+
+
     private
     def paperclip_file_url(item, attribute)
       (item.send(attribute).s3_permissions == :private) ? item.send(attribute).expiring_url(10.minutes) : item.send(attribute).url
