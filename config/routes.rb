@@ -1,4 +1,13 @@
 Blog::Application.routes.draw do
+        root to: 'content#home'
+
+        ###
+        # Admin
+        ###
+        namespace :admin do
+          root to: 'content#home'
+        end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
