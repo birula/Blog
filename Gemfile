@@ -31,10 +31,10 @@ end
 
 gem 'will_paginate'     # paginação
 gem 'devise'            # autenticação
+gem 'redcarpet'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'heroku'
   gem 'rspec-rails'
   gem 'capybara'
   gem "database_cleaner"

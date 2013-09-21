@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Post <small>Visualizando posts</small>&nbsp;&nbsp;&nbsp;<%= link_to 'Nova Post', new_post_path, :class=>"btn btn-success" %></h1>
+  <h1>Post <small>Visualizando posts</small>&nbsp;&nbsp;&nbsp;<%= link_to 'Nova Post', new_admin_post_path, :class=>"btn btn-success" %></h1>
 </div>
     <p>
       <strong>Title:</strong>
@@ -7,11 +7,11 @@
     </p>
     <p>
       <strong>Body:</strong>
-      <%= @post.body %>
+      <%= markdown(@post.body) %>
     </p>
     <p>
       <strong>User:</strong>
       <%= @post.user %>
     </p>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_admin_post_path(@post) %> |
+<%= link_to 'Back', admin_posts_path %>
