@@ -1,0 +1,10 @@
+<div class="nav-collapse">
+  <ul class="nav">
+    <li <%- if ( current_page?(root_path)) -%>class="active"<%- end -%>><%= link_to "Home",  admin_root_path %></li>
+    <!-- <li <%- if ( controller.controller_name == "admins") -%>class="active"<%- end -%>><%= link_to "Admin", admin_admins_path %></li> -->
+    <li <%- if ( controller.controller_name == "events") -%>class="active"<%- end -%>><%= link_to "Eventos", admin_events_path %></li>
+    <li <%- if ( controller.controller_name == "guests") -%>class="active"<%- end -%>><%= link_to "Convidados", admin_guests_path %></li>
+    <li <%- if ( controller.controller_name == "accompanyings") -%>class="active"<%- end -%>><%= link_to "Acompanhantes", admin_accompanyings_path %></li>
+  </ul>
+</div>
+

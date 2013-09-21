@@ -1,0 +1,119 @@
+pt-BR:
+  empty: "Não temos nenhum %{model} ainda."
+  confirm: Tem certeza?
+  edit: Editar
+  destroy: Apagar
+  cancel: Cancelar
+  new: Criar %{model}
+  error_message_header: "%{count} erro(s) impediram este %{model} de ser salvo:"
+
+  task_found:
+    zero: "Nenhum ação no momento"
+    one: "%{count} ação imediata"
+    other: "%{count} ações imediatas"
+
+  not_found: "%{model} não encontrada!"
+  create_respond: "%{model} criado com sucesso!"
+  update_respond: "%{model} atualizado com sucesso!"
+  error_update_respond: "Falha ao atualizar %{model}!"
+  delete_respond: "%{model} excluido com sucesso!"
+
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      task:
+        one: Tarefa
+        other: Tarefas
+      project:
+        one: Projeto
+        other: Projetos
+      criterion_dependency:
+        one: Dependência
+        other: Dependências
+      criterion_priority:
+        one: Prioridade
+        other: Prioridades
+      criterion_complexity:
+        one: Complexidade
+        other: Complexidades
+      criterion_department:
+        one: Departamento
+        other: Departamentos
+      profiles:
+        one: Perfil
+        other: Perfis
+      business:
+        one: Empresa
+        other: Empresas
+    attributes:
+      business:
+        name: "Nome"
+        description: "Descrição"
+        site: "Site"
+        slug: "Url customizada"
+      profile:
+        name: "Nome"
+        description: "Descrição"
+        level: "Nível"
+        slug: "Url customizada"
+      project:
+        name: "Nome"
+        description: "Descrição"
+        slug: "Url customizada"
+        business: "Empresa"
+        executive: "Executivo"
+        manager: "Manager"
+      user:
+        name: "Nome"
+        email: "E-mail"
+        business: "Empresa"
+        slug: "Url customizada"
+        password: "Senha"
+        password_confirmation: "Confirmação de senha"
+        project: "Projeto"
+        profile: "Perfil"
+      task:
+        name: "Nome"
+        description: "Descrição"
+        slug: "Url customizada"
+        start_at: "Data Início"
+        end_at: "Data Finalização"
+        project: "Projeto"
+        user: "Executivo"
+        criterion_dependency: "Dependência"
+        criterion_complexity: "Complexidade"
+        criterion_priority: "Prioridade"
+        criterion_department: "Departamento"
+        criterion_status: "Status"
+        note: "Observação"
+      criterion_dependency:
+        name: "Nome"
+        value: "Descrição"
+      criterion_complexity:
+        name: "Nome"
+        value: "Descrição"
+      criterion_priority:
+        name: "Nome"
+        value: "Descrição"
+      criterion_department:
+        name: "Nome"
+        value: "Descrição"
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Próximo &#8594;"
+    page_gap: "&hellip;"
+
+    page_entries_info:
+      single_page:
+        zero:  "Nenhum %{model} encontrado"
+        one:   "1 %{model}"
+        other: "Exibindo %{count} %{model}"
+      single_page_html:
+        zero:  "Nenhum %{model} encontrado"
+        one:   "Exibindo <b>1</b> %{model}"
+        other: "Exibindo <b>&nbsp;%{count}</b> %{model}"
+
+      multi_page: "Exibindo %{model} %{from} - %{to} de %{count} no total"
+      multi_page_html: "Exibindo %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b>  no total"
