@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h1>User <small>Visualizando users</small>&nbsp;&nbsp;&nbsp;<%= link_to 'Nova User', new_user_path, :class=>"btn btn-success" %></h1>
+</div>
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

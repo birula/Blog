@@ -1,0 +1,124 @@
+/* pagination */
+
+.pagination {
+    float: right;
+}
+
+.pagination a, .pagination span, .pagination em {
+    float: left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+}
+
+
+.pagination span.disabled,
+.pagination em,
+.pagination a,
+.pagination a:link,
+.pagination a.previous_page:link{
+    float: left;
+    padding: 0 14px;
+    line-height: 34px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #08c;
+}
+
+.pagination:after {
+    float: left;
+    padding: 0 14px;
+    line-height: 34px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+}
+
+* html .pagination { height: 1%; }
+*:first-child+html .pagination { overflow: hidden; }
+
+
+/* errors */
+#error_explanation {
+    width: 100%;
+    border: 1px solid #f1dcd7;
+    padding: 5px;
+    padding-bottom: 5px;
+    color:#000000;
+    background-color: #f9f2ec;
+    margin-top:20px;
+    height:auto;
+    margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    color:#d13316;
+    margin-left:15px;
+    letter-spacing: 0px;
+}
+#error_explanation ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-indent: 5px;
+    text-align: left;
+    margin-left:10px;
+    color:#d1624f;
+}
+#error_explanation li {
+    font-size: 12px;
+    list-style-type: none;
+    margin-top:5px;
+}
+
+/* flash messages */
+.flash_message{
+    position: relative;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.flash_message .close{
+    font-weight:bold;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    cursor: pointer;
+}
+
+p#demo {
+    padding: 10px 10px 10px 40px;
+    color: #000;
+    background: #FFF url(/assets/icon/info.png) no-repeat 10px 10px;
+    border: 1px solid #999999;
+}
+
+p#notice {
+    padding: 10px 10px 10px 40px;
+    color: #264409;
+    background: #e6efc2 url(/assets/icon/notice.png) no-repeat 10px 10px;
+    border: 1px solid #c6d880;
+}
+
+p#alert {
+    padding: 10px 10px 10px 40px;
+    color: #514721;
+    background: #fff6bf url(/assets/icon/alert.png) no-repeat 10px 10px;
+    border: 1px solid #ffd324;
+}
+
+p#error {
+    margin: 5px 0;
+    padding: 10px 10px 10px 40px;
+    color: #8a1f11;
+    background-color: #fbe3e4;
+    background-image: url(/assets/icon/error.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    border: 1px solid #fbc2c4;
+}
+
+/* html5 placeholder fix for ie */
+.jquery_placeholder { color: #aaa; }
