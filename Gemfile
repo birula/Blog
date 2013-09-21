@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -32,14 +29,31 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'will_paginate'     # paginação
+gem 'devise'            # autenticação
 
+group :development, :test do
+  gem 'sqlite3'
+  gem 'heroku'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem "database_cleaner"
+  gem 'factory_girl_rails'
+  gem 'simplecov'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rufus-scheduler'
+end
+
+gem 'sendgrid'
+
+###
+# Server
+###
 # Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'unicorn',                '4.6.2'
+gem 'unicorn-worker-killer',  '0.4.1'
+gem 'rack-canonical-host',    '0.0.8'
+gem "rack-timeout"
