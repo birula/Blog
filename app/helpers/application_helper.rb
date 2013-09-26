@@ -1,12 +1,9 @@
+require 'redcarpet'
+
 module ApplicationHelper
-  class HTMLwithPygments < Redcarpet::Render::HTML
-    def block_code(code, language)
-      Pygments.highlight(code, lexer:language)
-    end
-  end
 
   def markdown(text)
-    renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
+    renderer = Redcarpet::Render::HTML
     options = {
       autolink: true,
       no_intra_emphasis: true,
