@@ -11,9 +11,13 @@
 
  *= require_self
  *= require bootstrap-responsive.min
- *= require bootstrap.min
+ *= require bootstrap
  *= require scaffolds
  */
+
+
+
+
 
 body {
     padding-top: 60px;
