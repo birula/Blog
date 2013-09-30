@@ -3955,6 +3955,7 @@ input[type="submit"].btn.btn-mini {
   left: auto;
 }
 
+
 .breadcrumb {
   padding: 7px 14px;
   margin: 0 0 18px;
@@ -5126,4 +5127,16 @@ p.footer-link {
   color: #F9F9F9;
   background: #232627;
   line-height: 18px;
+}
+
+.comment-link {
+  white-space: nowrap;
+}
+
+.post-comment-link {
+  float: right;
+}
+
+.post-header {
+  padding: 10px 0;
 }
