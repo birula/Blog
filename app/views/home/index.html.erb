@@ -1,22 +1,77 @@
-<% if @posts.present? %>
-<% @posts.each do |post| %>
 
-<div class="page-header">
-  <h1>  <%= post.title %></h1>
-</div>
+<div class="container" id="container">
+	<div class="row">
+		<div class="span8 clearfix">
+			<div class="main section" id="main"><div class="widget Blog" id="Blog2">
+				<div class="blog-posts hfeed">
+					<div class="date-outer">
+						<div class="date-posts">
+							<div class="post-outer">
+								<!--START POSTS -->
+								<% if @posts.present? %>
+								<% @posts.each do |post| %>
+								<div class="post hentry" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+									<meta content="8331608933109255560" itemprop="blogId">
+									<meta content="1734246235155184003" itemprop="postId">
+									<a name="1734246235155184003"></a>
+									<!--TITLE-->
+									<h2 class="post-title entry-title">
+										<a href="http://bootstrapbloggertemplate.blogspot.com.br/2012/05/a-post-with-out-image.html">	<%= post.title %>
+										</a>
+									</h2>
+									<div class="post-header">
+										<div class="post-header-line-1"></div>
+										<span class="post-comment-link">
+											<a class="comment-link" href="http://bootstrapbloggertemplate.blogspot.com.br/2012/05/a-post-with-out-image.html#comment-form" onclick="">
+												2 comments:
+											</a>
+										</span>
+										<!--Author-->
+										<span class="post-author vcard">
+											Postado por
+											<span class="fn"><%= post.user.name %></span>
+										</span>
+										<span class="post-timestamp">
+											at
+											<a class="timestamp-link" href="http://bootstrapbloggertemplate.blogspot.com.br/2012/05/a-post-with-out-image.html" rel="bookmark" title="permanent link"><abbr class="published"><%= post.created_at %></abbr></a>
+										</span>
+										<span class="post-labels">
+											Categorias:
+											<a class="label label-success" href="http://bootstrapbloggertemplate.blogspot.com.br/search/label/Label1" rel="tag">Label1</a>,
+											<a class="label label-success" href="http://bootstrapbloggertemplate.blogspot.com.br/search/label/Label2" rel="tag">Label2</a>
+										</span>
+									</div>
+									<!--Post Body-->
+									<div id="summary1734246235155184003"><div>
+										<%= markdown(post.body) %>
+									</div></div>
+									<script type="text/javascript">
+									createSummaryAndThumb("summary1734246235155184003");
+									</script>
+									<div style="clear: both;"></div>
+								
+
+									<%= link_to admin_post_path(post), :class=>"btn rmlink" do %></i> Ler tudo<% end %>
 
 
+								</div>
+							</div>
+							<% end %>
+							<% else %>
+							<strong><%= ta(Post, 'not_found') %></strong>
+							<% end %>
+						</div>
+					</div>
+				</div>
 
-<p class="lead">
- <%= markdown(post.body) %>
-</p>
+				<!-- BOTAO HOME-->
+				<div class="blog-pager" id="blog-pager">
+					<a class="home-link btn" href="http://bootstrapbloggertemplate.blogspot.com.br/">Home</a>
+				</div>
+				<div class="clear"></div>
 
-<%= post.user.name %>
-<%= post.created_at %>
+			</div>
+		</div>
+		<!-- END Loop -->
+	</div>
 
-<%= link_to admin_post_path(post), :class=>"btn btn-mini" do %><i class="icon-file"></i> Ler tudo<% end %>
-
-<% end %>
-<% else %>
-<strong><%= ta(Post, 'not_found') %></strong>
-<% end %>
